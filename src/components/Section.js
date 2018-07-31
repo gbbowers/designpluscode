@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Wave from './Wave';
 
 const SectionGroup = styled.div`
     margin: 100px 0 0;
@@ -49,9 +50,24 @@ const SectionText = styled.p`
     color: white;
 `
 
+const WaveBottom = styled.div`
+	position: absolute;
+	width: 100%;
+	bottom: -6px;
+`
+
+const WaveTop = styled.div`
+	position: absolute;
+	width: 100%;
+	top: -6px;
+	transform: rotate(180deg);
+`
+
 
 const Section = props => (
 	<SectionGroup image={props.image}>
+		<WaveTop><Wave /></WaveTop>
+		<WaveBottom><Wave /></WaveBottom>
 		<SectionLogo src={props.logo} />
 		<SectionTitleGroup>
 			<SectionTitle>{props.title}</SectionTitle>
